@@ -1,0 +1,56 @@
+nav {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    position: relative;
+    top: 0px;
+}
+
+nav ul {
+    display: grid;
+    grid-template-columns: repeat(4,1fr) 15%;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+}
+
+nav ul li {
+    list-style-type: none;
+    text-align: center;
+}
+
+nav ul li a {
+    color: black;
+    text-align: center;
+    text-decoration: none;
+    padding: 6px 6px 6px 6px;
+    font-size: 150%;
+    position: relative;
+    top: 0px; 
+}
+
+nav ul li a:hover {
+
+}
+
+nav ul li a:visited {
+    color: white;
+}
+
+header {
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+#topProfile img {
+    max-height: 50px;
+    border-radius: 100%;
+}
+
+#topProfile {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    grid-template-rows: auto;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+}
