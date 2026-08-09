@@ -20,7 +20,7 @@ nav {
 
 nav ul {
     display: grid;
-    grid-template-columns: auto auto 1fr auto auto;
+    grid-template-columns: auto auto 1fr auto;
     grid-template-rows: auto;
     justify-content: start;
     align-items: center;
@@ -30,6 +30,10 @@ nav ul {
     padding: 0 32px;
     max-width: 1160px;
     margin: 0 auto;
+}
+
+#logSect a {
+    margin-left: 24px;
 }
 
 nav ul li {
@@ -113,4 +117,18 @@ nav ul.nav-minimal {
     grid-template-columns: none;
     justify-content: center;
     gap: 28px;
+}
+
+.profile {
+    display: inline-block;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
+    border: 1px solid transparent;
+    cursor: pointer;
+    text-align: center;
+    background: transparent;
+    color: var(--dark-grad)
 }

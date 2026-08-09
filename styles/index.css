@@ -89,7 +89,6 @@ article.courses > h3 {
     font-weight: 700;
     letter-spacing: 0.03em;
     color: #fff;
-    background: linear-gradient(135deg, var(--dark-grad), var(--light-grad));
 }
 
 .course-body {

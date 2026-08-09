@@ -8,6 +8,7 @@
         <link href="styles/theme.css" type="text/css" rel="stylesheet">
         <link href="styles/nav.css" type="text/css" rel="stylesheet">
         <link href="styles/index.css" type="text/css" rel="stylesheet">
+        <link href="styles/course.css" type="text/css" rel="stylesheet">
     </head>
 
     <body>
@@ -19,8 +20,10 @@
                     <div class="searchbar">
                         <input type="text" placeholder="Search courses...">
                     </div>
-                    <a href="login.html" class="btn btn-ghost">Log in</a>
-                    <a href="signup.html" class="btn btn-primary">Sign up</a>  
+                    <div id="logSect">
+                        <a href="login.html" class="btn btn-ghost">Log in</a>
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>  
+                    </div>
                 </ul>
             </nav>
         </header>
@@ -53,7 +56,7 @@
                     <p>What learners are doing this week.</p>
 
                     <article class="courses">
-                        <h3>DIGITAL PAINTING</h3>
+                        <h3 id="class01">DIGITAL PAINTING</h3>
                         <div class="course-body">
                             <h4>Digital Painting Foundations</h4>
                             <div class="instructor">by Alice B.</div>
@@ -62,7 +65,7 @@
                     </article>
 
                     <article class="courses">
-                        <h3>CHARACTER DESIGN</h3>
+                        <h3 id="class02">CHARACTER DESIGN</h3>
                         <div class="course-body">
                             <h4>Character Design &amp; Illustration</h4>
                             <div class="instructor">by Bob C.</div>
@@ -71,7 +74,7 @@
                     </article>
 
                     <article class="courses">
-                        <h3>ANATOMY</h3>
+                        <h3 id="class03">ANATOMY</h3>
                         <div class="course-body">
                             <h4>Dynamic Anatomy for Illustrators</h4>
                             <div class="instructor">by Charlie D.</div>
@@ -80,7 +83,7 @@
                     </article>
 
                     <article class="courses">
-                        <h3>KRITA WORKFLOWS</h3>
+                        <h3 id="class04">KRITA WORKFLOWS</h3>
                         <div class="course-body">
                             <h4>Tablet Workflows</h4>
                             <div class="instructor">with Dustin E.</div>
@@ -129,5 +132,6 @@
                 <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>
             </div>
         </footer>
+        <script type="module" src="scripts/loginState.js"></script>
     </body>
 </html>

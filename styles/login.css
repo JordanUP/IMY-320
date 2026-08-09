@@ -1,5 +1,6 @@
 html, body {
     margin: 0;
+    overflow: hidden;
 }
 
 main {
@@ -12,8 +13,8 @@ main {
 }
 
 #side {
-    background: linear-gradient(160deg, var(--vib-blue), var(--light-grad));
-    background-size: 26px 26px, cover;
+    background-image: url("../images/login-side.jpg");
+    background-size: 1500px;
     display: flex;
     align-items: flex-end;
     padding: 48px;

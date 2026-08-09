@@ -40,6 +40,9 @@ if (signupButton) {
             return;
         }
 
+        sessionStorage.logged = true;
+        sessionStorage.name = username;
+
         // Signup successful
         window.location.href = "index.html";
     });
@@ -80,6 +83,9 @@ if (loginButton) {
         if (!valid) {
             return;
         }
+
+        sessionStorage.logged = true;
+        sessionStorage.name = username;
 
         // Login successful
         window.location.href = "index.html";
