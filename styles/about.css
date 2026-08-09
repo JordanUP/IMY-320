@@ -1,0 +1,153 @@
+.about,
+.mission,
+.values,
+.team {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 48px 32px;
+}
+
+
+.about {
+    text-align: center;
+    padding-top: 72px;
+    padding-bottom: 24px;
+}
+
+.about h1 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 14px;
+}
+
+.about h2 {
+    font-size: 36px;
+    max-width: 640px;
+    margin: 0 auto 14px;
+}
+
+.about p {
+    max-width: 520px;
+    margin: 0 auto;
+    font-size: 17px;
+}
+
+
+.mission,
+.values {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 40px;
+    align-items: start;
+    padding-top: 32px;
+    padding-bottom: 32px;
+}
+
+.mission > h2,
+.values > h2 {
+    grid-column: 1;
+    grid-row: 1;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    background: var(--moss);
+    display: inline-block;
+    padding: 8px 14px;
+    border-radius: 999px;
+    height: fit-content;
+}
+
+.mission > *:not(h2),
+.values > *:not(h2) {
+    grid-column: 2;
+}
+
+.mission h3,
+.values h3 {
+    font-size: 28px;
+    margin-bottom: 14px;
+}
+
+.mission p {
+    font-size: 15.5px;
+}
+
+.value-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: grid;
+    gap: 14px;
+}
+
+.value-list li {
+    font-size: 15px;
+    color: var(--text-primary);
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 16px 18px;
+}
+
+.value-list strong {
+    display: block;
+    margin-bottom: 4px;
+    color: var(--ink-900);
+}
+
+
+.team {
+    border-top: 1px solid var(--line);
+    padding-top: 56px;
+    padding-bottom: 64px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.team > h2,
+.team > p {
+    grid-column: 1 / -1;
+}
+
+.team > h2 { font-size: 26px; margin-bottom: 4px; }
+.team > p { margin-bottom: 8px; }
+
+.member {
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 20px;
+    text-align: center;
+}
+
+.member h4 {
+    font-size: 15px;
+    margin-bottom: 2px;
+}
+
+.member .role {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+}
+
+.member .quip {
+    font-size: 13px;
+    color: var(--text-primary);
+    font-style: italic;
+}
+
+@media (max-width: 900px) {
+    .mission, .values { grid-template-columns: 1fr; }
+    .mission > *, .values > * { grid-column: 1; }
+    .team { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 560px) {
+    .team { grid-template-columns: 1fr; }
+    .about h2 { font-size: 28px; }
+}

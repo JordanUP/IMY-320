@@ -1,0 +1,166 @@
+main {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 0 32px;
+}
+
+
+section.blurb {
+    padding: 72px 0 56px;
+    max-width: 620px;
+}
+
+section.blurb h1 {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--moss);
+    margin-bottom: 14px;
+}
+
+section.blurb h2 {
+    font-size: 42px;
+    margin-bottom: 16px;
+}
+
+section.blurb p {
+    font-size: 18px;
+}
+
+
+section.what-we-offer {
+    padding: 48px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+section.what-we-offer > h1 {
+    grid-column: 1 / -1;
+    font-size: 26px;
+    margin-bottom: 8px;
+}
+
+section.what-we-offer h3 {
+    font-size: 17px;
+    margin-bottom: 6px;
+}
+
+section.what-we-offer p {
+    font-size: 14.5px;
+    margin: 0;
+}
+
+
+section.trending h1,
+section.reviews h1 {
+    grid-column: 1 / -1;
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+section.trending > p,
+section.reviews > p {
+    grid-column: 1 / -1;
+    margin-bottom: 28px;
+}
+
+
+section.trending {
+    padding: 56px 0;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+article.courses {
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+}
+
+article.courses > h3 {
+    margin: 0;
+    padding: 28px 14px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #fff;
+    background: linear-gradient(135deg, var(--dark-grad), var(--light-grad));
+}
+
+.course-body {
+    padding: 14px 16px 18px;
+}
+
+.course-body h4 {
+    font-size: 15px;
+    margin-bottom: 4px;
+}
+
+.course-body .instructor {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 10px;
+}
+
+.course-body .rating {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--dark-grad);
+}
+
+
+section.reviews {
+    padding: 56px 0 72px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+section.reviews > div {
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    padding: 22px;
+}
+
+section.reviews p:first-child {
+    color: var(--stars);
+    letter-spacing: 2px;
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+section.reviews p {
+    font-size: 14.5px;
+    color: var(--text-primary);
+}
+
+.reviewer {
+    margin-top: 12px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.reviewer strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 13.5px;
+}
+
+
+@media (max-width: 900px) {
+    section.what-we-offer { grid-template-columns: 1fr 1fr; }
+    section.trending { grid-template-columns: repeat(2, 1fr); }
+    section.reviews { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 560px) {
+    section.what-we-offer,
+    section.trending { grid-template-columns: 1fr; }
+    section.blurb h2 { font-size: 30px; }
+}

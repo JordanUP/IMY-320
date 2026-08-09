@@ -1,16 +1,35 @@
+/* ============================================
+   Nav bar
+   ============================================ */
+header.nav {
+    padding-top: 0;
+    padding-bottom: 0;
+    position: sticky;
+    top: 0;
+    z-index: 20;
+    background: var(--nav);
+    border-bottom: 1px solid var(--line);
+}
+
 nav {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
     position: relative;
     top: 0px;
 }
 
 nav ul {
     display: grid;
-    grid-template-columns: repeat(4,1fr) 15%;
+    grid-template-columns: auto auto 1fr auto auto;
     grid-template-rows: auto;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
+    gap: 24px;
+    height: 72px;
+    margin: 0;
+    padding: 0 32px;
+    max-width: 1160px;
+    margin: 0 auto;
 }
 
 nav ul li {
@@ -19,26 +38,52 @@ nav ul li {
 }
 
 nav ul li a {
-    color: black;
+    color: var(--vib-blue);
     text-align: center;
     text-decoration: none;
-    padding: 6px 6px 6px 6px;
-    font-size: 150%;
+    padding: 6px 6px;
+    font-size: 100%;
+    font-weight: 600;
+    font-family: var(--font-display);
     position: relative;
-    top: 0px; 
+    top: 0px;
 }
 
 nav ul li a:hover {
-
+    color: var(--light-grad);
 }
 
-nav ul li a:visited {
-    color: white;
+#mainPage {
+    font-size: 120%;
 }
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 0 16px;
+    height: 40px;
+    max-width: 380px;
+    width: 100%;
+}
+
+.searchbar input {
+    border: none;
+    background: transparent;
+    outline: none;
+    font-size: 14px;
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.searchbar input::placeholder { color: var(--text-muted); }
 
 header {
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 0;
+    padding-bottom: 0;
 }
 
 #topProfile img {
@@ -53,4 +98,19 @@ header {
     justify-content: center;
     align-items: center;
     text-align: left;
+}
+
+@media (max-width: 700px) {
+    nav ul {
+        grid-template-columns: auto auto auto auto;
+    }
+    .searchbar { display: none; }
+}
+
+
+nav ul.nav-minimal {
+    display: flex;
+    grid-template-columns: none;
+    justify-content: center;
+    gap: 28px;
 }
