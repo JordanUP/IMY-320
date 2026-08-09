@@ -102,3 +102,7 @@ main {
     main { grid-template-columns: 1fr; }
     #side { display: none; }
 }
+
+nav {
+    background: var(--nav);
+}

@@ -127,6 +127,7 @@
 .member h4 {
     font-size: 15px;
     margin-bottom: 2px;
+    margin-top: 10px;
 }
 
 .member .role {
@@ -150,4 +151,41 @@
 @media (max-width: 560px) {
     .team { grid-template-columns: 1fr; }
     .about h2 { font-size: 28px; }
+}
+
+#banner {
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    background-image: url('../images/banner-about.jpg');
+    background-size: 2000px;
+}
+
+.beeImg {
+    height: 200px;
+    margin: 0;
+    border-radius: 20px;
+}
+
+#beeJordan {
+    background-image: url(../images/bee-jordan.jpg);
+    background-size: 300px;
+}
+
+#beeAni {
+    background-image: url(../images/bee-ani.jpg);
+    background-size: 400px;
+    background-position: -80px;
+}
+
+#beeChloe {
+    background-image: url(../images/bee-chloe.jpg);
+    background-size: 300px;
+    background-position: -50px;
+}
+
+#beeDaniel {
+    background-image: url(../images/bee-daniel.jpg);
+    background-size: 300px;
+    background-position: -40px;
 }

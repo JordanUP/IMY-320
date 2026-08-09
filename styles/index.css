@@ -163,3 +163,21 @@ section.reviews p {
     section.trending { grid-template-columns: 1fr; }
     section.blurb h2 { font-size: 30px; }
 }
+
+#banner {
+    margin: 0;
+    padding: 0;
+    height: 300px;
+    background-image: url('../images/banner.jpg');
+    background-size: 2000px;
+}
+
+section.what-we-offer h3 {
+    background-image: url('../images/offer.jpg');
+    background-size: 2000px;
+    border-radius: 20px;
+    text-align: center;
+    color: #fff;
+    height: 40px;
+    padding-top: 10px;
+}
