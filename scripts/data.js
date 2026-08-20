@@ -16,7 +16,8 @@ export const COURSES = [
             { title: "Brushwork & texture", detail: "Introduce custom brushes to create materials, distance and texture." },
             { title: "Finishing pass", detail: "Sharpen focal points, neaten edges, and export your finished piece." }
         ],
-        instructorBio: "Alice has worked as a background painter for animated shorts and teaches the way she wishes she'd been taught: less theory, more practice."
+        instructorBio: "Alice has worked as a background painter for animated shorts and teaches the way she wishes she'd been taught: less theory, more practice.",
+        bannerImg: 'class01.jpg'
     },
     {
         cat: "character-design-illustration",
@@ -35,7 +36,8 @@ export const COURSES = [
             { title: "Expression & pose", detail: "Draw a turnaround and an expression sheet." },
             { title: "Final render", detail: "Take your strongest pose to a finished, ready to present illustration." }
         ],
-        instructorBio: "Bob designs characters for indie games and comics."
+        instructorBio: "Bob designs characters for indie games and comics.",
+        bannerImg: 'class02.jpg'
     },
     {
         cat: "dynamic-anatomy-illustrators",
@@ -54,7 +56,8 @@ export const COURSES = [
             { title: "Foreshortening", detail: "Push the pose into perspective without it falling apart." },
             { title: "Render the pose", detail: "Take one pose to a finished, rendered illustration." }
         ],
-        instructorBio: "Charlie has taught figure drawing for over 2 decades and illustrates for board game rule books on the side."
+        instructorBio: "Charlie has taught figure drawing for over 2 decades and illustrates for board game rule books on the side.",
+        bannerImg: 'class03.jpg'
     },
     {
         cat: "krita-workflows",
@@ -73,7 +76,8 @@ export const COURSES = [
             { title: "Layers & clipping", detail: "Use layers and clipping masks without losing track of your file." },
             { title: "Export & backup", detail: "Set up autosave and export presets so you never lose your work." }
         ],
-        instructorBio: "Dustin runs a tech shop on the side and has onboarded hundreds of students onto Krita."
+        instructorBio: "Dustin runs a tech shop on the side and has onboarded hundreds of students onto Krita.",
+        bannerImg: 'class04.jpg'
     },
     {
         cat: "environment-sketching",
@@ -91,7 +95,8 @@ export const COURSES = [
             { title: "Placing light", detail: "Decide where light comes from and commit to it across the scene." },
             { title: "Finish the sketch", detail: "Tighten up your favourite aspects of the scene to a finished piece." }
         ],
-        instructorBio: "Elijah has been a professional painter for more than 35 years, lending his skills to many animation studios."
+        instructorBio: "Elijah has been a professional painter for more than 35 years, lending his skills to many animation studios.",
+        bannerImg: 'class05.jpg'
     },
     {
         cat: "expressive-portraits",
@@ -110,6 +115,7 @@ export const COURSES = [
             { title: "Mood & lighting", detail: "Choose a lighting setup that supports the mood you're after." },
             { title: "Polishing", detail: "Refine edges and finish rendering without losing the person underneath." }
         ],
-        instructorBio: "Fanny runs an art studio, teaching the youth what makes art so fun. Also a huge BeeGees fan."
+        instructorBio: "Fanny runs an art studio, teaching the youth what makes art so fun. Also a huge BeeGees fan.",
+        bannerImg: 'class06.jpg'
     }
 ];

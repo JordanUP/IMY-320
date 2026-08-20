@@ -37,6 +37,8 @@ function renderCourse(course) {
     document.getElementById("courseInstructorName").textContent = course.instructor;
     document.getElementById("courseInstructorBio").textContent = course.instructorBio;
 
+    document.getElementById("course-image").style.backgroundImage = `url(../images/${course.bannerImg})`;
+
     loadingEl.hidden = true;
     contentEl.hidden = false;
 }

@@ -9,6 +9,7 @@
         <link href="styles/theme.css" type="text/css" rel="stylesheet">
         <link href="styles/nav.css" type="text/css" rel="stylesheet">
         <link href="styles/coursepage.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     </head>
 
     <body>
@@ -41,6 +42,8 @@
             <article class="course-body-content" id="courseContent" hidden>
 
                 <a href="catalogue.html" class="course-back">< All courses</a>
+
+                <section id="course-image" style="background-image: url('../images/placeholderSide.png')"></section>
 
                 <header class="course-hero">
                     <span class="course-tag" id="courseTag"></span>
@@ -76,6 +79,8 @@
                     <p id="courseInstructorBio"></p>
                 </section>
 
+                <input type="button" id="buyButton" value="Buy Now" />
+
             </article>
 
         </main>
@@ -97,5 +102,6 @@
         </footer>
         <script type="module" src="scripts/loginState.js"></script>
         <script type="module" src="scripts/course.js"></script>
+        <script type="module" src="scripts/addCourse.js"></script>
     </body>
 </html>

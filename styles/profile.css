@@ -11,3 +11,216 @@
     font-size: 15px;
     cursor: pointer;
 }
+
+#clearAllButton {
+    width: 100%;
+    margin-top: 22px;
+    padding: 12px;
+    border-radius: var(--radius-sm);
+    border: none;
+    background: var(--dark-grad);
+    color: #fff;
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+#profileName {
+    font-size: 48px;
+    margin-bottom: 0px;
+}
+
+#accountState {
+    font-size: 24px;
+    opacity: 70%;
+}
+
+#profileHeader img {
+    height: 300px;
+    width: 300px;
+    border-radius: 100%;
+    border: 8px darkblue dashed;
+}
+
+#profileHeader {
+    padding-top: 20px;
+    padding-left: 32px;
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.cat-row {
+    display: grid;
+    grid-template-columns: auto minmax(0, 2.2fr) minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 20px;
+    padding: 18px 20px;
+    background: var(--inside-box);
+    border: 1px solid var(--line);
+    border-radius: var(--radius-md);
+    text-decoration: none;
+    color: inherit;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.cat-row:hover,
+.cat-row:focus-visible {
+    border-color: var(--light-grad);
+    box-shadow: var(--shadow-card);
+    outline: none;
+}
+
+.cat-row-mark {
+    width: 8px;
+    align-self: stretch;
+    border-radius: 999px;
+    background: var(--vib-blue);
+}
+
+.cat-row-mark[data-category="Digital Painting"] { background: var(--vib-blue); }
+.cat-row-mark[data-category="Character Design"] { background: var(--light-grad); }
+.cat-row-mark[data-category="Anatomy"]          { background: var(--moss); }
+.cat-row-mark[data-category="Krita Workflows"]  { background: var(--dark-grad); }
+
+.cat-row-main {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    min-width: 0;
+}
+
+.cat-row-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--vib-blue);
+}
+
+.cat-row-desc {
+    font-size: 13.5px;
+    color: var(--text-muted);
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.cat-row-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+}
+
+.cat-tag {
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    color: #fff;
+    background: var(--moss);
+    padding: 4px 12px;
+    border-radius: 999px;
+}
+
+.cat-instructor {
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.cat-row-stats {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 4px;
+    font-size: 13.5px;
+    white-space: nowrap;
+}
+
+.cat-rating {
+    color: var(--stars);
+    font-weight: 700;
+}
+
+.cat-duration,
+.cat-level {
+    color: var(--text-muted);
+}
+
+.cat-row-go {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--light-grad);
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateX(-4px);
+    transition: opacity 0.15s ease, transform 0.15s ease;
+}
+
+.cat-row:hover .cat-row-go,
+.cat-row:focus-visible .cat-row-go {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+.cat-empty {
+    text-align: center;
+    padding: 56px 20px;
+    background: var(--inside-box);
+    border: 1px dashed var(--line);
+    border-radius: var(--radius-md);
+    margin-top: 12px;
+}
+
+.cat-empty h2 {
+    font-size: 20px;
+    margin-bottom: 6px;
+}
+
+.cat-empty p {
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+
+.nav a.active {
+    color: var(--light-grad);
+}
+
+
+@media (max-width: 900px) {
+    .cat-toolbar {
+        grid-template-columns: 1fr;
+    }
+
+    .cat-row {
+        grid-template-columns: 6px 1fr;
+        grid-template-areas:
+            "mark main"
+            "mark meta"
+            "mark stats";
+        row-gap: 10px;
+    }
+
+    .cat-row-mark { grid-area: mark; }
+    .cat-row-main { grid-area: main; }
+    .cat-row-meta { grid-area: meta; flex-direction: row; align-items: center; gap: 10px; }
+    .cat-row-stats { grid-area: stats; flex-direction: row; align-items: center; gap: 10px; }
+    .cat-row-go { display: none; }
+}
+
+@media (max-width: 560px) {
+    .cat-head h1 { font-size: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cat-row, .cat-row-go {
+        transition: none;
+    }
+}
+
+.cat-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}

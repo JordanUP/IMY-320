@@ -9,6 +9,7 @@
         <link href="styles/nav.css" type="text/css" rel="stylesheet">
         <link href="styles/index.css" type="text/css" rel="stylesheet">
         <link href="styles/profile.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
     </head>
 
     <body>
@@ -16,7 +17,7 @@
             <nav>
                 <ul>
                     <li><a href="index.html" id="mainPage">BrushStroke</a></li>
-                    <li><a href="#courses">All Courses</a></li>
+                    <li><a href="catalogue.html">All Courses</a></li>
                     <div class="searchbar">
                         <input type="text" placeholder="Search courses...">
                     </div>
@@ -30,12 +31,28 @@
         </header>
 
         <main>
-            <br /><br /><br /><br />
-            <h1>This section is still under construction</h1>
+            <br id="topSpace" />
+
+            <section id="profileHeader">
+                <section id="headText">
+                    <p id="profileName">Some Guy</p>
+                    <p id="accountState">User</p>
+                </section>
+                
+                <img src="./images/placeholderProfile.jpg" />
+            </section>
+
+            <section id="myCourses">
+                <h1>My Courses</h1>
+                <section class="cat-list" id="catList" role="list" aria-label="Course list">
+
+                <!--Rows are rendered by catalogue.js-->
+
+                </section>
+            </section>
 
             <input type="button" id="logoutButton" value="Log Out" />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
-            <br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+            <input type="button" id="clearAllButton" value="Clear All Courses" />
         </main>
         
         <footer>
@@ -55,5 +72,7 @@
         </footer>
         <script type="module" src="scripts/loginState.js"></script>
         <script type="module" src="scripts/logout.js"></script>
+        <script type="module" src="scripts/clearAll.js"></script>
+        <script type="module" src="scripts/profile.js"></script>
     </body>
 </html>
