@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>BrushStroke — Catalogue</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/catalogue.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html" id="mainPage">BrushStroke</a></li>
+                    <li><a href="catalogue.html" class="active">All Courses</a></li>
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search courses...">
+                    </div>
+                    <div id="logSect">
+                        <a href="login.html" class="btn btn-ghost">Log in</a>
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="catalogue">
+
+            <section class="cat-head">
+                <h1>Course catalogue</h1>
+                <p>Every course, laid out for you to explore.</p>
+            </section>
+
+            <section class="cat-toolbar">
+                <div class="cat-search">
+                    <label for="catSearch">Search</label>
+                    <input type="text" id="catSearch" placeholder="Search by title, instructor or topic…" autocomplete="off">
+                </div>
+
+                <div class="cat-filter">
+                    <label for="catCategory">Category</label>
+                    <select id="catCategory">
+                        <option value="all">All categories</option>
+                    </select>
+                </div>
+
+                <div class="cat-sort">
+                    <label for="catSort">Sort by</label>
+                    <select id="catSort">
+                        <option value="relevance">Relevance</option>
+                        <option value="rating-desc">Rating, high to low</option>
+                        <option value="rating-asc">Rating, low to high</option>
+                        <option value="title-asc">Title, A–Z</option>
+                        <option value="title-desc">Title, Z–A</option>
+                        <option value="duration-asc">Duration, shortest first</option>
+                        <option value="duration-desc">Duration, longest first</option>
+                    </select>
+                </div>
+            </section>
+
+            <section class="cat-listmeta">
+                <span id="catCount">Loading courses…</span>
+            </section>
+
+            <section class="cat-list" id="catList" role="list" aria-label="Course list">
+
+                <!--Rows are rendered by catalogue.js-->
+
+            </section>
+
+            <section class="cat-empty" id="catEmpty" hidden>
+                <h2>No courses match that search</h2>
+                <p>Try a different keyword, or clear the category filter.</p>
+                <button type="button" id="catReset" class="btn btn-ghost">Clear filters</button>
+            </section>
+
+        </main>
+
+        <footer>
+            <div> BrushStroke </div>
+
+            <p class="blurb">Art courses for people who'd rather finish a piece than binge-watch tutorials.</p>
+
+            <a href="about.html">About us</a>
+
+            <h5>Support</h5>
+            <a href="#">Help centre</a>
+            <a href="#">Contact</a>
+
+            <div>
+                <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>
+            </div>
+        </footer>
+        <script type="module" src="scripts/loginState.js"></script>
+        <script type="module" src="scripts/catalogue.js"></script>
+    </body>
+</html>

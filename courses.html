@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>BrushStroke — Course</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/coursepage.css" type="text/css" rel="stylesheet">
+    </head>
+
+    <body>
+        <header class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html" id="mainPage">BrushStroke</a></li>
+                    <li><a href="catalogue.html">All Courses</a></li>
+                    <div class="searchbar">
+                        <input type="text" placeholder="Search courses...">
+                    </div>
+                    <div id="logSect">
+                        <a href="login.html" class="btn btn-ghost">Log in</a>
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="course-page" id="coursePage">
+
+            <div class="course-loading" id="courseLoading">Loading course…</div>
+
+            <div class="course-not-found" id="courseNotFound" hidden>
+                <h1>Course not found</h1>
+                <p>That link doesn't match a course we offer. It may have been renamed or removed.</p>
+                <a href="catalogue.html" class="btn btn-primary">Back to catalogue</a>
+            </div>
+
+            <article class="course-body-content" id="courseContent" hidden>
+
+                <a href="catalogue.html" class="course-back">< All courses</a>
+
+                <header class="course-hero">
+                    <span class="course-tag" id="courseTag"></span>
+                    <h1 id="courseTitle"></h1>
+                    <p class="course-summary" id="courseSummary"></p>
+
+                    <div class="course-stats">
+                        <span><strong id="courseRating"></strong> Rating</span>
+                        <span><strong id="courseDuration"></strong> Total</span>
+                        <span><strong id="courseLevel"></strong> Level</span>
+                        <span>with <strong id="courseInstructor"></strong></span>
+                    </div>
+
+                </header>
+
+                <section class="course-finished">
+                    <h2>What you'll finish</h2>
+                    <p id="courseFinishedPiece"></p>
+                </section>
+
+                <section class="course-modules">
+                    <h2>What's covered</h2>
+                    <ol class="module-list" id="courseModules">
+
+                        <!--module rows from data.js will be inserted here-->
+
+                    </ol>
+                </section>
+
+                <section class="course-instructor">
+                    <h2>Your instructor</h2>
+                    <p><strong id="courseInstructorName"></strong></p>
+                    <p id="courseInstructorBio"></p>
+                </section>
+
+            </article>
+
+        </main>
+
+        <footer>
+            <div> BrushStroke </div>
+
+            <p class="blurb">Art courses for people who'd rather finish a piece than binge-watch tutorials.</p>
+
+            <a href="about.html">About us</a>
+
+            <h5>Support</h5>
+            <a href="#">Help centre</a>
+            <a href="#">Contact</a>
+
+            <div>
+                <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>
+            </div>
+        </footer>
+        <script type="module" src="scripts/loginState.js"></script>
+        <script type="module" src="scripts/course.js"></script>
+    </body>
+</html>
