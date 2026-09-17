@@ -1,10 +1,17 @@
+import { COURSES } from "./data.js";
+import { ensureDefaults, isLoggedIn, getName, getPurchasedIds } from "./storage.js";
+
+ensureDefaults();
+
 const profileName = document.getElementById("profileName");
 const accountState = document.getElementById("accountState");
-
-profileName.innerText = sessionStorage.name;
-
-import { COURSES } from "./data.js";
 const listEl = document.getElementById("catList");
+
+if (profileName) profileName.textContent = getName();
+
+if (accountState) {
+    accountState.textContent = isLoggedIn() ? "Learner" : "Not signed in";
+}
 
 function renderRow(course) {
     const row = document.createElement("a");
@@ -27,15 +34,46 @@ function renderRow(course) {
             <span class="cat-duration">${course.durationHours}h</span>
             <span class="cat-level">${course.level}</span>
         </span>
-        <span class="cat-row-go">View course →</span>
+        <span class="cat-row-go">Continue</span>
     `;
     return row;
 }
 
+function renderEmpty() {
+    const empty = document.createElement("div");
+    empty.className = "cat-empty";
+
+    const heading = document.createElement("h2");
+    heading.textContent = "Nothing on the easel yet";
+
+    const copy = document.createElement("p");
+    copy.textContent = "Pick a course and the first thing you finish will show up here.";
+
+    const cta = document.createElement("a");
+    cta.className = "btn btn-primary";
+    cta.href = "catalogue.html";
+    cta.textContent = "Browse courses";
+
+    empty.append(heading, copy, cta);
+    return empty;
+}
+
 function render() {
-    listEl.innerHTML = "";
-    COURSES.forEach(course => listEl.appendChild(renderRow(course)));
-    listEl.hidden = results.length === 0;
+    if (!listEl) return;
+
+    const owned = getPurchasedIds();
+    const myCourses = COURSES.filter(course => owned.includes(course.cat));
+
+    listEl.replaceChildren();
+
+    if (myCourses.length === 0) {
+        listEl.appendChild(renderEmpty());
+        listEl.hidden = false;
+        return;
+    }
+
+    myCourses.forEach(course => listEl.appendChild(renderRow(course)));
+    listEl.hidden = false;
 }
 
 render();

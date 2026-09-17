@@ -1,93 +1,97 @@
-console.log("hello there");
+import { login } from "./storage.js";
 
-const signupButton = document.getElementById("signupButton");
+const MIN_PASSWORD_LENGTH = 8;
 
-if (signupButton) {
+function setError(field, message) {
+    const errorEl = document.getElementById(`${field}Error`);
+    const inputEl = document.getElementById(field);
 
-    signupButton.addEventListener("click", function() {
-        console.log("working1");
+    if (errorEl) errorEl.textContent = message;
+    if (inputEl) {
+        inputEl.classList.toggle("has-error", Boolean(message));
+        inputEl.setAttribute("aria-invalid", message ? "true" : "false");
+    }
+}
 
-        const username = document.getElementById("signupusername").value.trim();
-        const password = document.getElementById("signuppassword").value;
+function validateUsername(field, value) {
+    if (value === "") {
+        setError(field, "Enter a username.");
+        return false;
+    }
+    setError(field, "");
+    return true;
+}
 
-        const usernameError = document.getElementById("signupusernameError");
-        const passwordError = document.getElementById("signuppasswordError");
+function validatePassword(field, value, { checkLength }) {
+    if (value === "") {
+        setError(field, "Enter a password.");
+        return false;
+    }
+    if (checkLength && value.length < MIN_PASSWORD_LENGTH) {
+        setError(field, `Use at least ${MIN_PASSWORD_LENGTH} characters.`);
+        return false;
+    }
+    setError(field, "");
+    return true;
+}
 
-        // Clear old error messages
-        usernameError.textContent = "";
-        passwordError.textContent = "";
+function wireForm(prefix, { checkPasswordLength }) {
+    const button = document.getElementById(`${prefix}Button`);
+    if (!button) return;
 
-        let valid = true;
+    const usernameField = `${prefix}username`;
+    const passwordField = `${prefix}password`;
 
-        // Check username
-        if (username === "") {
-            usernameError.textContent = "Please enter a username.";
-            valid = false;
-        }
+    const usernameEl = document.getElementById(usernameField);
+    const passwordEl = document.getElementById(passwordField);
 
-        // Check password
-        if (password === "") {
-            passwordError.textContent = "Please enter a password.";
-            valid = false;
-        } else if (password.length < 6) {
-            passwordError.textContent =
-                "Password must be at least 6 characters long.";
-            valid = false;
-        }
+    function submit() {
+        const username = usernameEl.value.trim();
+        const password = passwordEl.value;
 
-        // Stop if there are errors
-        if (!valid) {
+        const usernameOk = validateUsername(usernameField, username);
+        const passwordOk = validatePassword(passwordField, password, {
+            checkLength: checkPasswordLength
+        });
+
+        if (!usernameOk || !passwordOk) {
+            //focus the first thing that needs fixing
+            (usernameOk ? passwordEl : usernameEl).focus();
             return;
         }
 
-        sessionStorage.logged = true;
-        sessionStorage.name = username;
-
-        // Signup successful
+        login(username);
         window.location.href = "index.html";
+    }
+
+    usernameEl.addEventListener("blur", () => {
+        if (usernameEl.value.trim() !== "") {
+            validateUsername(usernameField, usernameEl.value.trim());
+        }
     });
+
+    passwordEl.addEventListener("blur", () => {
+        if (passwordEl.value !== "") {
+            validatePassword(passwordField, passwordEl.value, {
+                checkLength: checkPasswordLength
+            });
+        }
+    });
+
+    usernameEl.addEventListener("input", () => setError(usernameField, ""));
+    passwordEl.addEventListener("input", () => setError(passwordField, ""));
+
+    [usernameEl, passwordEl].forEach(el => {
+        el.addEventListener("keydown", event => {
+            if (event.key === "Enter") {
+                event.preventDefault();
+                submit();
+            }
+        });
+    });
+
+    button.addEventListener("click", submit);
 }
 
-const loginButton = document.getElementById("loginButton");
-
-if (loginButton) {
-
-    loginButton.addEventListener("click", function() {
-        console.log("working2");
-
-        const username = document.getElementById("loginusername").value.trim();
-        const password = document.getElementById("loginpassword").value;
-
-        const usernameError = document.getElementById("loginusernameError");
-        const passwordError = document.getElementById("loginpasswordError");
-
-        // Clear old error messages
-        usernameError.textContent = "";
-        passwordError.textContent = "";
-
-        let valid = true;
-
-        // Check username
-        if (username === "") {
-            usernameError.textContent = "Please enter your username.";
-            valid = false;
-        }
-
-        // Check password
-        if (password === "") {
-            passwordError.textContent = "Please enter your password.";
-            valid = false;
-        }
-
-        // Stop if there are errors
-        if (!valid) {
-            return;
-        }
-
-        sessionStorage.logged = true;
-        sessionStorage.name = username;
-
-        // Login successful
-        window.location.href = "index.html";
-    });
-}
+wireForm("signup", { checkPasswordLength: true });
+wireForm("login", { checkPasswordLength: false });

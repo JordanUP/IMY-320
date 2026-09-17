@@ -1,0 +1,249 @@
+:root {
+    --error: #b3261e;
+}
+
+#buyButton {
+    transition: transform 120ms ease, opacity 160ms ease, background 160ms ease;
+}
+
+#buyButton:hover:not(:disabled):not(.is-owned) {
+    background: var(--light-grad);
+}
+
+#buyButton:active:not(:disabled) {
+    transform: translateY(1px) scale(0.985);
+}
+
+#buyButton.is-working {
+    opacity: 0.72;
+    cursor: progress;
+}
+
+#buyButton.is-owned {
+    background: transparent;
+    color: var(--dark-grad);
+    border: 2px solid var(--dark-grad);
+}
+
+#buyButton.is-owned:hover {
+    background: var(--dark-grad);
+    color: #fff;
+}
+
+#buyButton:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+}
+
+#buyButton:focus-visible {
+    outline: 3px solid var(--light-grad);
+    outline-offset: 3px;
+}
+
+body.enrol-locked {
+    overflow: hidden;
+}
+
+.enrol-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 100;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+    background: rgba(30, 27, 51, 0.62);
+
+    opacity: 0;
+    transition: opacity 200ms ease;
+}
+
+.enrol-overlay.is-open {
+    opacity: 1;
+}
+
+.enrol-panel {
+    position: relative;
+    overflow: hidden;
+
+    width: min(480px, 100%);
+    padding: 40px 36px 32px;
+
+    background: var(--inside-box);
+    border-radius: var(--radius-md);
+    box-shadow: 0 24px 60px -12px rgba(27, 24, 64, 0.45);
+
+    transform: translateY(14px) scale(0.97);
+    transition: transform 220ms cubic-bezier(0.2, 0.9, 0.3, 1.1);
+}
+
+.enrol-overlay.is-open .enrol-panel {
+    transform: translateY(0) scale(1);
+}
+
+.enrol-panel::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 auto 0;
+    height: 6px;
+    background: linear-gradient(
+        90deg,
+        var(--dark-grad) 0%,
+        var(--light-grad) 50%,
+        var(--moss) 100%
+    );
+}
+
+.enrol-close {
+    position: absolute;
+    top: 12px;
+    right: 14px;
+
+    width: 32px;
+    height: 32px;
+
+    font-family: var(--font-body);
+    font-size: 22px;
+    line-height: 1;
+    color: var(--text-muted);
+
+    background: none;
+    border: none;
+    border-radius: 999px;
+    cursor: pointer;
+}
+
+.enrol-close:hover {
+    color: var(--vib-blue);
+    background: var(--nav);
+}
+
+.enrol-close:focus-visible {
+    outline: 2px solid var(--light-grad);
+    outline-offset: 2px;
+}
+
+.enrol-title {
+    margin: 0 0 6px;
+    font-family: var(--font-display);
+    font-size: 32px;
+    line-height: 1.15;
+    color: var(--vib-blue);
+}
+
+.enrol-course {
+    margin: 0 0 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: var(--light-grad);
+}
+
+.enrol-label {
+    margin: 0 0 4px;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-primary);
+}
+
+.enrol-piece {
+    margin: 0 0 28px;
+    max-width: 34ch;
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-muted);
+}
+
+.enrol-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.enrol-actions .btn {
+    flex: 1 1 auto;
+    white-space: nowrap;
+}
+
+.enrol-actions .btn-ghost {
+    border-color: var(--foot-text);
+}
+
+.enrol-flecks {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+}
+
+.enrol-fleck {
+    position: absolute;
+    top: -14px;
+    left: var(--x);
+
+    width: 7px;
+    height: 13px;
+    border-radius: 2px 2px 40% 40%;
+
+    opacity: 0;
+    animation: enrol-fall 1700ms cubic-bezier(0.25, 0.7, 0.4, 1) var(--delay) forwards;
+}
+
+.enrol-fleck:nth-child(6n + 1) { background: var(--vib-blue); }
+.enrol-fleck:nth-child(6n + 2) { background: var(--light-grad); }
+.enrol-fleck:nth-child(6n + 3) { background: var(--moss); }
+.enrol-fleck:nth-child(6n + 4) { background: var(--stars); }
+.enrol-fleck:nth-child(6n + 5) { background: var(--foot-text); }
+.enrol-fleck:nth-child(6n + 6) { background: var(--dark-grad); }
+
+@keyframes enrol-fall {
+    0% {
+        opacity: 1;
+        transform: translate(0, 0) rotate(0deg) scale(var(--scale));
+    }
+    100% {
+        opacity: 0;
+        transform: translate(var(--drift), 420px) rotate(var(--spin)) scale(var(--scale));
+    }
+}
+
+.cat-empty .btn-primary {
+    display: inline-block;
+}
+
+#box input.has-error {
+    border-color: var(--error);
+}
+
+#box input.has-error:focus {
+    border-color: var(--error);
+    box-shadow: 0 0 0 3px rgba(179, 38, 30, 0.18);
+}
+
+#loginusernameError,
+#loginpasswordError,
+#signupusernameError,
+#signuppasswordError {
+    display: block;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--error);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .enrol-overlay,
+    .enrol-panel,
+    #buyButton {
+        transition: none;
+    }
+
+    .enrol-panel {
+        transform: none;
+    }
+
+    .enrol-fleck {
+        display: none;
+    }
+}

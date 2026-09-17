@@ -1,12 +1,12 @@
-const logoutButton = document.getElementById("clearAllButton");
-import data from "../data/loginState.json" with { type: "json" };
+import { clearPurchases } from "./storage.js";
 
-if (logoutButton) {
+const clearAllButton = document.getElementById("clearAllButton");
 
-    logoutButton.addEventListener("click", function() {
-        sessionStorage.logged = data.logged;
-        sessionStorage.name = data.name;
+if (clearAllButton) {
+    clearAllButton.addEventListener("click", function () {
+        if (!window.confirm("Remove every course from your profile?")) return;
+
+        clearPurchases();
+        window.location.reload();
     });
-
-    console.log(sessionStorage);
 }

@@ -1,17 +1,34 @@
+import { ensureDefaults, isLoggedIn, getName } from "./storage.js";
+
+ensureDefaults();
+
 const logHeader = document.getElementById("logSect");
 
-import data from "../data/loginState.json" with { type: "json" };
+if (logHeader) {
+    if (isLoggedIn()) {
+        const name = getName();
 
-if (sessionStorage.length == 1 || sessionStorage.length == 0) {
-    sessionStorage.logged = data.logged;
-    sessionStorage.name = data.name;
-}
+        const label = document.createElement("p");
+        label.className = "profile";
+        label.textContent = name;
 
-console.log(sessionStorage);
+        const link = document.createElement("a");
+        link.href = "profile.html";
+        link.className = "btn btn-primary";
+        link.textContent = "Profile";
 
-if (sessionStorage.logged == "true") {
-    logHeader.innerHTML = '<p class="profile">' + sessionStorage.name + '</p> <a href="profile.html" class="btn btn-primary">Profile</a>'
-}
-else {
-    logHeader.innerHTML = '<a href="login.html" class="btn btn-ghost">Log in</a> <a href="signup.html" class="btn btn-primary">Sign up</a>'
+        logHeader.replaceChildren(label, link);
+    } else {
+        const logIn = document.createElement("a");
+        logIn.href = "login.html";
+        logIn.className = "btn btn-ghost";
+        logIn.textContent = "Log in";
+
+        const signUp = document.createElement("a");
+        signUp.href = "signup.html";
+        signUp.className = "btn btn-primary";
+        signUp.textContent = "Sign up";
+
+        logHeader.replaceChildren(logIn, signUp);
+    }
 }

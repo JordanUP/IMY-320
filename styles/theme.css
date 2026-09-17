@@ -9,9 +9,10 @@
     --stars: #00b37a;
     --bg: #e9f1f1;
     --inside-box: #fcfcfc;
-    --line: #ccffce71;
+    --line: #d5d8ec;
+    --line-strong: #b9bedd;
     --text-primary: #1E1B33;
-    --text-muted: #203c47;
+    --text-muted: #5c5a73;
 
     --font-display: 'Space Grotesk', 'Segoe UI', sans-serif;
     --font-body: 'Inter', 'Segoe UI', sans-serif;
@@ -67,6 +68,10 @@ a:hover { color: var(--dark-grad); }
 .btn-ghost { background: transparent; color: var(--dark-grad); border-color: var(--line); }
 .btn-ghost:hover { border-color: var(--light-grad); color: var(--light-grad); }
 
+.btn-block {
+    width: 100%;
+    padding: 12px;
+}
 
 footer {
     background: var(--vib-blue);
