@@ -1,0 +1,135 @@
+/* ===========================================================================
+   contact.css
+   Contact page: message form on one side, help centre answers on the other.
+   ======================================================================== */
+
+.contact-page {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 56px 32px 80px;
+}
+
+.contact-head {
+    max-width: 640px;
+    margin-bottom: 36px;
+}
+
+.contact-head h1 {
+    font-size: 38px;
+}
+
+.contact-head p {
+    color: var(--text-muted);
+    font-size: 17px;
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.contact-card {
+    padding: 32px;
+    background: var(--inside-box);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.contact-card h2 {
+    font-size: 22px;
+}
+
+.contact-card label {
+    display: block;
+    margin: 16px 0 6px;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.contact-card input[type="text"],
+.contact-card input[type="email"],
+.contact-card textarea {
+    width: 100%;
+    padding: 11px 14px;
+    font-family: var(--font-body);
+    font-size: 14.5px;
+    color: var(--text-primary);
+    background: #fff;
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    cursor: text;
+}
+
+.contact-card textarea {
+    min-height: 130px;
+    resize: vertical;
+}
+
+.contact-card input:focus,
+.contact-card textarea:focus {
+    outline: none;
+    border-color: var(--light-grad);
+    box-shadow: 0 0 0 3px var(--foot-links);
+}
+
+.contact-card .btn {
+    margin-top: 20px;
+}
+
+.contact-thanks {
+    margin-top: 18px;
+    padding: 14px 16px;
+    font-weight: 600;
+    color: #00604a;
+    background: #e3f6ef;
+    border-radius: var(--radius-sm);
+}
+
+.contact-thanks[hidden] {
+    display: none;
+}
+
+.faq details {
+    border-bottom: 1px solid var(--line-strong);
+}
+
+.faq details:last-child {
+    border-bottom: none;
+}
+
+.faq summary {
+    padding: 14px 0;
+    font-weight: 600;
+    cursor: pointer;
+    list-style: none;
+}
+
+.faq summary::-webkit-details-marker {
+    display: none;
+}
+
+.faq summary::after {
+    content: "+";
+    float: right;
+    color: var(--light-grad);
+    font-size: 20px;
+    line-height: 1;
+}
+
+.faq details[open] summary::after {
+    content: "–";
+}
+
+.faq details p {
+    margin: 0 0 14px;
+    color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+}

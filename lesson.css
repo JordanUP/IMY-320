@@ -1,0 +1,405 @@
+/* ===========================================================================
+   lesson.css
+   Lesson pages and printable certificates.
+   ======================================================================== */
+
+.lesson-page {
+    max-width: 1160px;
+    margin: 0 auto;
+    padding: 40px 32px 80px;
+}
+
+/* --- Gate (not logged in / not enrolled) ---------------------------------- */
+
+.lesson-gate {
+    max-width: 520px;
+    margin: 72px auto;
+    padding: 40px 32px;
+    text-align: center;
+    background: var(--inside-box);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.lesson-gate p {
+    margin: 0 0 22px;
+    color: var(--text-muted);
+}
+
+/* --- Two column shell ------------------------------------------------------ */
+
+.lesson-shell {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 32px;
+    align-items: start;
+}
+
+.lesson-side {
+    position: sticky;
+    top: 96px;
+    padding: 22px;
+    background: var(--inside-box);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+}
+
+.lesson-side h2 {
+    margin: 0 0 4px;
+    font-size: 13px;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--moss);
+}
+
+#lessonCourseLink {
+    display: block;
+    margin-bottom: 18px;
+    font-family: var(--font-display);
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 1.25;
+    color: var(--vib-blue);
+}
+
+.progress-meta {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 6px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.progress-track {
+    height: 8px;
+    margin-bottom: 20px;
+    overflow: hidden;
+    background: var(--line);
+    border-radius: 999px;
+}
+
+.progress-fill {
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, var(--light-grad), var(--moss));
+    border-radius: 999px;
+    transition: width 400ms ease;
+}
+
+#lessonNav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 6px;
+}
+
+#lessonNav a {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 10px 12px;
+    font-size: 14.5px;
+    font-weight: 500;
+    color: var(--text-primary);
+    border: 1px solid transparent;
+    border-radius: var(--radius-sm);
+}
+
+#lessonNav a:hover {
+    background: var(--nav);
+}
+
+#lessonNav a[aria-current="page"] {
+    background: var(--nav);
+    border-color: var(--foot-text);
+    font-weight: 700;
+}
+
+.lesson-mark {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--foot-text);
+    border-radius: 999px;
+    background: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 16px;
+    color: #fff;
+}
+
+#lessonNav a.is-done .lesson-mark {
+    background: var(--moss);
+    border-color: var(--moss);
+}
+
+#lessonNav a.is-done .lesson-mark::after {
+    content: "✓";
+}
+
+/* --- Lesson content -------------------------------------------------------- */
+
+.lesson-main {
+    padding: 36px;
+    background: var(--inside-box);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.lesson-kicker {
+    margin: 0 0 8px;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--moss);
+}
+
+.lesson-main h1 {
+    margin-bottom: 12px;
+    font-size: 34px;
+}
+
+#lessonDetail {
+    max-width: 60ch;
+    margin: 0 0 28px;
+    font-size: 17px;
+    color: var(--text-muted);
+}
+
+.lesson-main h2 {
+    margin-bottom: 12px;
+    font-size: 20px;
+}
+
+#taskList {
+    margin: 0 0 28px;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.task {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+    background: var(--bg);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: border-color 0.15s ease, background 0.15s ease;
+}
+
+.task:hover {
+    border-color: var(--light-grad);
+}
+
+.task input {
+    flex: 0 0 auto;
+    width: 20px;
+    height: 20px;
+    margin: 2px 0 0;
+    accent-color: var(--moss);
+    cursor: pointer;
+}
+
+.task input:checked + span {
+    color: var(--text-muted);
+    text-decoration: line-through;
+    text-decoration-color: var(--moss);
+}
+
+.lesson-footer {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+    padding-top: 22px;
+    border-top: 1px solid var(--line-strong);
+}
+
+#lessonStatus {
+    margin-right: auto;
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--text-muted);
+}
+
+#lessonStatus.is-done {
+    color: var(--moss);
+}
+
+#lessonStatus.is-done::before {
+    content: "✓ ";
+}
+
+#nextLesson.is-ready {
+    background: var(--moss);
+    box-shadow: 0 0 0 4px rgba(0, 141, 103, 0.18);
+}
+
+#finishCourse {
+    padding: 11px 22px;
+    border: none;
+    border-radius: var(--radius-sm);
+    background: var(--dark-grad);
+    color: #fff;
+    font-family: var(--font-body);
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#finishCourse:hover:not(:disabled) {
+    background: var(--moss);
+}
+
+#finishCourse:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* --- Certificate ----------------------------------------------------------- */
+
+.cert-page {
+    max-width: 880px;
+    margin: 0 auto;
+    padding: 48px 32px 80px;
+}
+
+.cert-sheet {
+    position: relative;
+    padding: 56px 48px;
+    text-align: center;
+    background: #fff;
+    border: 3px double var(--dark-grad);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-card);
+}
+
+.cert-sheet::before {
+    content: "";
+    position: absolute;
+    inset: 12px;
+    border: 1px solid var(--foot-text);
+    border-radius: 10px;
+    pointer-events: none;
+}
+
+.cert-brand {
+    margin: 0 0 8px;
+    font-family: var(--font-display);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--moss);
+}
+
+.cert-sheet h1 {
+    margin: 0 0 28px;
+    font-size: 40px;
+}
+
+.cert-lead {
+    margin: 0;
+    color: var(--text-muted);
+}
+
+#certName {
+    margin: 8px 0;
+    font-family: var(--font-display);
+    font-size: 44px;
+    font-weight: 700;
+    color: var(--vib-blue);
+}
+
+#certCourse {
+    margin: 8px 0 18px;
+    font-size: 28px;
+}
+
+#certPiece {
+    max-width: 52ch;
+    margin: 0 auto 32px;
+    color: var(--text-muted);
+}
+
+.cert-meta {
+    display: flex;
+    justify-content: center;
+    gap: 48px;
+    font-size: 14px;
+    color: var(--text-muted);
+}
+
+.cert-meta strong {
+    display: block;
+    color: var(--text-primary);
+    font-size: 16px;
+}
+
+.cert-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+/* --- Responsive and print -------------------------------------------------- */
+
+@media (max-width: 900px) {
+    .lesson-shell {
+        grid-template-columns: 1fr;
+    }
+
+    .lesson-side {
+        position: static;
+    }
+
+    .lesson-main {
+        padding: 24px;
+    }
+
+    .cert-sheet {
+        padding: 40px 24px;
+    }
+
+    #certName {
+        font-size: 32px;
+    }
+
+    .cert-meta {
+        flex-direction: column;
+        gap: 12px;
+    }
+}
+
+@media print {
+    header, footer, .cert-actions {
+        display: none !important;
+    }
+
+    body {
+        background: #fff;
+    }
+
+    .cert-page {
+        padding: 0;
+    }
+
+    .cert-sheet {
+        box-shadow: none;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .progress-fill, .task {
+        transition: none;
+    }
+}

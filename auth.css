@@ -1,0 +1,225 @@
+/* ===========================================================================
+   auth.css
+   Log in and sign up share login.css for layout, then diverge here so they no
+   longer look identical:
+     - Log in:  indigo panel on the left, short welcome, one remember-me option.
+     - Sign up: moss-green panel on the RIGHT, list of benefits, live password rules.
+   Load after login.css and enrol.css.
+   ======================================================================== */
+
+/* login.css assumed a 65px header but the nav is 72px. */
+main {
+    min-height: calc(100vh - 72px);
+}
+
+/* --- Side panels (replace the old background photo, which could 404) ------ */
+
+#side.auth-side {
+    flex-direction: column;
+    justify-content: flex-end;
+    gap: 12px;
+    color: #fff;
+}
+
+
+.auth-eyebrow {
+    margin: 0;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+#side.auth-side h2 {
+    margin: 0;
+    max-width: 14ch;
+    font-size: 40px;
+    color: #fff;
+}
+
+#side.auth-side p:not(.auth-eyebrow) {
+    margin: 0;
+    max-width: 34ch;
+    font-size: 16px;
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-benefits {
+    margin: 8px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.auth-benefits li {
+    position: relative;
+    padding-left: 28px;
+    font-size: 15px;
+    color: #fff;
+}
+
+.auth-benefits li::before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.22);
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+}
+
+/* --- Form pieces ----------------------------------------------------------- */
+
+.auth-sub {
+    margin: -12px 0 20px;
+    color: var(--text-muted);
+    text-align: left;
+}
+
+#box .field {
+    margin-top: 16px;
+}
+
+#box .field:first-of-type {
+    margin-top: 0;
+}
+
+#box .field label {
+    margin-top: 0;
+}
+
+.field-hint {
+    margin: 4px 0 0;
+    font-size: 12.5px;
+    color: var(--text-muted);
+    text-align: left;
+}
+
+.field-error {
+    display: block;
+    min-height: 0;
+    margin-top: 6px;
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--error, #b3261e);
+}
+
+.field-error:empty {
+    display: none;
+}
+
+.pw-field {
+    position: relative;
+}
+
+.pw-field input {
+    padding-right: 74px;
+}
+
+.pw-toggle {
+    position: absolute;
+    top: 50%;
+    right: 8px;
+    transform: translateY(-50%);
+    margin-top: 2px;
+    padding: 6px 10px;
+    font-family: var(--font-body);
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--light-grad);
+    background: transparent;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+}
+
+.pw-toggle:hover {
+    background: var(--nav);
+}
+
+.pw-toggle:focus-visible {
+    outline: 2px solid var(--light-grad);
+    outline-offset: 1px;
+}
+
+.pw-rules {
+    margin: 10px 0 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 4px;
+    font-size: 13px;
+    color: var(--text-muted);
+}
+
+.pw-rules li {
+    position: relative;
+    padding-left: 22px;
+}
+
+.pw-rules li::before {
+    content: "○";
+    position: absolute;
+    left: 0;
+    color: var(--foot-text);
+}
+
+.pw-rules li.is-met {
+    color: var(--moss);
+    font-weight: 600;
+}
+
+.pw-rules li.is-met::before {
+    content: "✓";
+    color: var(--moss);
+}
+
+#box .check {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 18px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+#box .check input {
+    width: 16px;
+    height: 16px;
+    margin: 0;
+    accent-color: var(--dark-grad);
+    cursor: pointer;
+}
+
+.auth-form-error {
+    margin: 12px 0 0;
+    padding: 10px 12px;
+    font-size: 13.5px;
+    font-weight: 500;
+    color: var(--error, #b3261e);
+    background: #fdeceb;
+    border-radius: var(--radius-sm);
+    text-align: left;
+}
+
+.auth-form-error:empty {
+    display: none;
+}
+
+#box a[href] {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+}
+
+@media (max-width: 800px) {
+    .auth-signup #side.auth-side {
+        order: 0;
+    }
+}
