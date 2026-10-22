@@ -187,7 +187,7 @@ body.enrol-locked {
     border-radius: 2px 2px 40% 40%;
 
     opacity: 0;
-    animation: enrol-fall 1700ms cubic-bezier(0.25, 0.7, 0.4, 1) var(--delay) forwards;
+    animation: enrol-fall 2800ms cubic-bezier(0.3, 0.6, 0.4, 1) var(--delay) forwards;
 }
 
 .enrol-fleck:nth-child(6n + 1) { background: var(--vib-blue); }
@@ -204,7 +204,7 @@ body.enrol-locked {
     }
     100% {
         opacity: 0;
-        transform: translate(var(--drift), 420px) rotate(var(--spin)) scale(var(--scale));
+        transform: translate(var(--drift), 460px) rotate(var(--spin)) scale(var(--scale));
     }
 }
 
@@ -246,4 +246,11 @@ body.enrol-locked {
     .enrol-fleck {
         display: none;
     }
+}
+/* Note under the enrol button on the course page. */
+.enrol-note {
+    margin: 10px 0 0;
+    font-size: 13.5px;
+    text-align: center;
+    color: var(--text-muted);
 }

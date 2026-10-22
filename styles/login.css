@@ -13,7 +13,7 @@ main {
 }
 
 #side {
-    background-image: url("../images/login-side.jpg");
+    background-image: url("/images/login-side.jpg");
     background-size: 1500px;
     display: flex;
     align-items: flex-end;

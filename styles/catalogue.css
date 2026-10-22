@@ -110,6 +110,10 @@
 .cat-row-mark[data-category="Character Design"] { background: var(--light-grad); }
 .cat-row-mark[data-category="Anatomy"]          { background: var(--moss); }
 .cat-row-mark[data-category="Krita Workflows"]  { background: var(--dark-grad); }
+.cat-row-mark[data-category="Illustration"]      { background: var(--stars); }
+.cat-row-mark[data-category="Procreate Workflows"] { background: var(--foot-text); }
+.cat-row-mark[data-category="Pixel Art"]           { background: #b45309; }
+.cat-row-mark[data-category="Graphic Design"]      { background: #be185d; }
 
 .cat-row-main {
     display: flex;

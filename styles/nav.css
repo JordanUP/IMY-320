@@ -19,21 +19,25 @@ nav {
 }
 
 nav ul {
-    display: grid;
-    grid-template-columns: auto auto 1fr auto;
-    grid-template-rows: auto;
-    justify-content: start;
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
-    gap: 24px;
-    height: 72px;
-    margin: 0;
+    gap: 8px 20px;
+    min-height: 72px;
+    margin: 0 auto;
     padding: 0 32px;
     max-width: 1160px;
-    margin: 0 auto;
+}
+
+#logSect {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-left: auto;
 }
 
 #logSect a {
-    margin-left: 24px;
+    margin-left: 0;
 }
 
 nav ul li {
@@ -106,9 +110,8 @@ header {
 
 @media (max-width: 700px) {
     nav ul {
-        grid-template-columns: auto auto auto auto;
+        padding: 8px 16px;
     }
-    .searchbar { display: none; }
 }
 
 
@@ -131,4 +134,14 @@ nav ul.nav-minimal {
     text-align: center;
     background: transparent;
     color: var(--dark-grad)
+}
+
+/* Current page */
+nav ul li a.active {
+    color: var(--light-grad);
+    box-shadow: inset 0 -3px 0 var(--light-grad);
+}
+
+nav ul li[hidden] {
+    display: none;
 }

@@ -82,6 +82,10 @@
 .cat-row-mark[data-category="Character Design"] { background: var(--light-grad); }
 .cat-row-mark[data-category="Anatomy"]          { background: var(--moss); }
 .cat-row-mark[data-category="Krita Workflows"]  { background: var(--dark-grad); }
+.cat-row-mark[data-category="Illustration"]      { background: var(--stars); }
+.cat-row-mark[data-category="Procreate Workflows"] { background: var(--foot-text); }
+.cat-row-mark[data-category="Pixel Art"]           { background: #b45309; }
+.cat-row-mark[data-category="Graphic Design"]      { background: #be185d; }
 
 .cat-row-main {
     display: flex;
@@ -223,4 +227,92 @@
     display: flex;
     flex-direction: column;
     gap: 12px;
+}
+
+/* Progress inside a course row */
+.cat-progress {
+    display: block;
+    height: 6px;
+    margin-top: 8px;
+    overflow: hidden;
+    background: var(--line);
+    border-radius: 999px;
+}
+
+.cat-progress-fill {
+    display: block;
+    height: 100%;
+    background: linear-gradient(90deg, var(--light-grad), var(--moss));
+    border-radius: 999px;
+}
+
+.cat-progress-text {
+    margin-top: 4px;
+    font-size: 12.5px;
+    color: var(--text-muted);
+}
+
+.cat-row-go.is-visible {
+    opacity: 1;
+    transform: none;
+}
+
+/* Certificates */
+#myCertificates {
+    margin-top: 40px;
+}
+
+.cert-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.cert-card {
+    display: grid;
+    gap: 4px;
+    padding: 20px;
+    color: inherit;
+    background: var(--inside-box);
+    border: 1px solid var(--line-strong);
+    border-radius: var(--radius-md);
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, transform 0.15s ease;
+}
+
+.cert-card:hover {
+    border-color: var(--moss);
+    box-shadow: var(--shadow-card);
+    transform: translateY(-2px);
+}
+
+.cert-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    margin-bottom: 6px;
+    color: #fff;
+    background: var(--moss);
+    border-radius: 999px;
+}
+
+.cert-card-title {
+    font-family: var(--font-display);
+    font-size: 17px;
+    font-weight: 600;
+    color: var(--vib-blue);
+}
+
+.cert-card-date, .cert-empty {
+    font-size: 13.5px;
+    color: var(--text-muted);
+}
+
+#myCourses h1, #myCertificates h1 {
+    font-size: 26px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .cert-card { transition: none; }
 }
