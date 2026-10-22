@@ -20,7 +20,7 @@ function populateCategories() {
 
 function matchesSearch(course, query) {
     if (!query) return true;
-    const haystack = `${course.title} ${course.instructor} ${course.category}`.toLowerCase();
+    const haystack = `${course.title} ${course.instructor} ${course.category} ${course.description} ${course.summary}`.toLowerCase();
     return haystack.includes(query.toLowerCase());
 }
 

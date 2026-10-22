@@ -14,7 +14,7 @@ function renderModules(modules) {
     list.innerHTML = "";
     modules.forEach(module => {
         const li = document.createElement("li");
-        li.innerHTML = `<strong>${module.title}</strong><span>${module.detail}</span>`;
+        li.innerHTML = `<strong>${module.title}</strong><span>${module.focus} · ${module.tasks.length} tasks</span>`;
         list.appendChild(li);
     });
 }
