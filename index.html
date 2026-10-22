@@ -17,13 +17,12 @@
             <nav>
                 <ul>
                     <li><a href="index.html" id="mainPage">BrushStroke</a></li>
+                    <li><a href="index.html" class="active">Home</a></li>
                     <li><a href="catalogue.html">All Courses</a></li>
-                    <div class="searchbar">
-                        <input type="text" placeholder="Search courses...">
-                    </div>
+                    <li id="navMyCourses" hidden><a href="profile.html#myCourses">My Courses</a></li>
                     <div id="logSect">
                         <a href="login.html" class="btn btn-ghost">Log in</a>
-                        <a href="signup.html" class="btn btn-primary">Sign up</a>  
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>
                     </div>
                 </ul>
             </nav>
@@ -38,6 +37,10 @@
                 <h1>For those who learn by creating</h1>
                 <h2>Gain real skills. Finish real pieces.</h2>
                 <p>Courses in digital painting, illustration and character design, taught by working artists.</p>
+                <div class="hero-cta">
+                    <a class="btn btn-primary" href="catalogue.html">Browse free courses</a>
+                    <a class="btn btn-ghost" href="#courses">See what's trending</a>
+                </div>
             </section>
 
 
@@ -58,41 +61,53 @@
                     <h1>Trending courses</h1>
                     <p>What learners are doing this week.</p>
 
+                    <a class="course-link" href="courses.html?cat=digital-painting-foundations">
                     <article class="courses">
                         <h3 id="class01">DIGITAL PAINTING</h3>
                         <div class="course-body">
                             <h4>Digital Painting Foundations</h4>
                             <div class="instructor">by Alice B.</div>
                             <div class="rating">4.8 ★</div>
+                            <span class="go">View course →</span>
                         </div>
                     </article>
+                    </a>
 
+                    <a class="course-link" href="courses.html?cat=character-design-illustration">
                     <article class="courses">
                         <h3 id="class02">CHARACTER DESIGN</h3>
                         <div class="course-body">
                             <h4>Character Design &amp; Illustration</h4>
                             <div class="instructor">by Bob C.</div>
                             <div class="rating">4.9 ★</div>
+                            <span class="go">View course →</span>
                         </div>
                     </article>
+                    </a>
 
+                    <a class="course-link" href="courses.html?cat=dynamic-anatomy-illustrators">
                     <article class="courses">
                         <h3 id="class03">ANATOMY</h3>
                         <div class="course-body">
                             <h4>Dynamic Anatomy for Illustrators</h4>
                             <div class="instructor">by Charlie D.</div>
                             <div class="rating">4.7 ★</div>
+                            <span class="go">View course →</span>
                         </div>
                     </article>
+                    </a>
 
+                    <a class="course-link" href="courses.html?cat=krita-workflows">
                     <article class="courses">
                         <h3 id="class04">KRITA WORKFLOWS</h3>
                         <div class="course-body">
-                            <h4>Tablet Workflows</h4>
-                            <div class="instructor">with Dustin E.</div>
+                            <h4>Krita Workflows</h4>
+                            <div class="instructor">by Dustin E.</div>
                             <div class="rating">4.8 ★</div>
+                            <span class="go">View course →</span>
                         </div>
                     </article>
+                    </a>
             </section>
 
 
@@ -125,11 +140,13 @@
 
             <p class="blurb">Art courses for people who'd rather finish a piece than binge-watch tutorials.</p>
 
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Courses</a>
             <a href="about.html">About us</a>
 
             <h5>Support</h5>
-            <a href="#">Help centre</a>
-            <a href="#">Contact</a>
+            <a href="contact.html#help">Help centre</a>
+            <a href="contact.html">Contact</a>
 
             <div>
                 <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>

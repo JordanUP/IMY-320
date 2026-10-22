@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <title>BrushStroke</title>
-    <meta name="author" content="The Bees">
-    <meta charset="utf-8">
-    <link href="styles/theme.css" type="text/css" rel="stylesheet">
-    <link href="styles/nav.css" type="text/css" rel="stylesheet">
-    <link href="styles/login.css" type="text/css" rel="stylesheet">
-    <link href="styles/enrol.css" type="text/css" rel="stylesheet">
+    <head>
+        <title>BrushStroke — Sign up</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/login.css" type="text/css" rel="stylesheet">
+        <link href="styles/enrol.css" type="text/css" rel="stylesheet">
+        <link href="styles/auth.css" type="text/css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
-</head>
+    </head>
 
-<body>
+<body class="auth-signup">
     <header>
         <nav>
             <ul>
@@ -22,15 +24,58 @@
     </header>
 
     <main>
-        <div id="side">
-            <!--<img src="images/placeholderSide.png" />-->
+        <div id="side" class="auth-side">
+            <p class="auth-eyebrow">New to BrushStroke?</p>
+            <h2>Finish your first piece.</h2>
+            <ul class="auth-benefits">
+                <li>Free courses taught by working artists</li>
+                <li>Short lessons with tasks you can tick off</li>
+                <li>A certificate for every course you finish</li>
+            </ul>
         </div>
         <div id="login">
             <div id="box">
                 <h1>Sign Up</h1>
-                <label>Username <br /> <input type="text" id="signupusername" /><span id="signupusernameError"></span></label> <br />
-                <label>Password <br /> <input type="password" id="signuppassword" /><span id="signuppasswordError"></span></label> <br />
-                <input type="button" id="signupButton" value="Sign In" />
+                <p class="auth-sub">It's free and takes under a minute.</p>
+
+                <div class="field">
+                    <label for="signupusername">Username</label>
+                    <input type="text" id="signupusername" autocomplete="username" />
+                    <p class="field-hint">3 to 20 letters, numbers or underscores.</p>
+                    <span class="field-error" id="signupusernameError"></span>
+                </div>
+
+                <div class="field">
+                    <label for="signupemail">Email</label>
+                    <input type="text" id="signupemail" autocomplete="email" inputmode="email" />
+                    <span class="field-error" id="signupemailError"></span>
+                </div>
+
+                <div class="field">
+                    <label for="signuppassword">Password</label>
+                    <div class="pw-field">
+                        <input type="password" id="signuppassword" autocomplete="new-password" />
+                        <button type="button" class="pw-toggle" data-target="signuppassword" aria-pressed="false">Show</button>
+                    </div>
+                    <ul class="pw-rules" aria-label="Password rules">
+                        <li data-rule="length">At least 8 characters</li>
+                        <li data-rule="number">At least one number</li>
+                        <li data-rule="special">At least one special character, like ! or #</li>
+                    </ul>
+                    <span class="field-error" id="signuppasswordError"></span>
+                </div>
+
+                <div class="field">
+                    <label for="signupconfirm">Confirm password</label>
+                    <div class="pw-field">
+                        <input type="password" id="signupconfirm" autocomplete="new-password" />
+                        <button type="button" class="pw-toggle" data-target="signupconfirm" aria-pressed="false">Show</button>
+                    </div>
+                    <span class="field-error" id="signupconfirmError"></span>
+                </div>
+
+                <input type="button" id="signupButton" class="btn btn-primary btn-block" value="Sign Up" />
+                <p class="auth-form-error" id="signupFormError" role="alert"></p>
 
                 <p>Already have an account? <a href="login.html">Log In</a></p>
             </div>

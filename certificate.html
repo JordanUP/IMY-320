@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>BrushStroke — Certificate</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/lesson.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+    </head>
+
+    <body>
+        <header class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html" id="mainPage">BrushStroke</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">All Courses</a></li>
+                    <li id="navMyCourses" hidden><a href="profile.html#myCourses" class="active">My Courses</a></li>
+                    <div id="logSect">
+                        <a href="login.html" class="btn btn-ghost">Log in</a>
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="cert-page">
+
+            <div class="lesson-gate" id="certMissing" hidden>
+                <h1>No certificate here yet</h1>
+                <p>Finish every lesson in a course and your certificate will appear on your profile.</p>
+                <a class="btn btn-primary" href="profile.html">Back to profile</a>
+            </div>
+
+            <section class="cert-sheet" id="certSheet" hidden>
+                <p class="cert-brand">BrushStroke</p>
+                <h1>Certificate of Completion</h1>
+                <p class="cert-lead">This certifies that</p>
+                <p id="certName"></p>
+                <p class="cert-lead">has finished the course</p>
+                <h2 id="certCourse"></h2>
+                <p id="certPiece"></p>
+
+                <div class="cert-meta">
+                    <span>Instructor<strong id="certInstructor"></strong></span>
+                    <span>Completed<strong id="certDate"></strong></span>
+                </div>
+            </section>
+
+            <div class="cert-actions">
+                <input type="button" id="printCert" class="btn btn-primary" value="Print or save as PDF" />
+                <a class="btn btn-ghost" href="profile.html#myCertificates">Back to profile</a>
+            </div>
+        </main>
+
+        <footer>
+            <div> BrushStroke </div>
+
+            <p class="blurb">Art courses for people who'd rather finish a piece than binge-watch tutorials.</p>
+
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Courses</a>
+            <a href="about.html">About us</a>
+
+            <h5>Support</h5>
+            <a href="contact.html#help">Help centre</a>
+            <a href="contact.html">Contact</a>
+
+            <div>
+                <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>
+            </div>
+        </footer>
+        <script type="module" src="scripts/loginState.js"></script>
+        <script type="module" src="scripts/certificate.js"></script>
+    </body>
+</html>

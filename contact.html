@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <title>BrushStroke — Contact</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/contact.css" type="text/css" rel="stylesheet">
+        <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
+    </head>
+
+    <body>
+        <header class="nav">
+            <nav>
+                <ul>
+                    <li><a href="index.html" id="mainPage">BrushStroke</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="catalogue.html">All Courses</a></li>
+                    <li id="navMyCourses" hidden><a href="profile.html#myCourses">My Courses</a></li>
+                    <div id="logSect">
+                        <a href="login.html" class="btn btn-ghost">Log in</a>
+                        <a href="signup.html" class="btn btn-primary">Sign up</a>
+                    </div>
+                </ul>
+            </nav>
+        </header>
+
+        <main class="contact-page">
+            <section class="contact-head">
+                <h1>Get in touch</h1>
+                <p>Stuck on something, or just want to say hello? Send us a message or check the quick answers.</p>
+            </section>
+
+            <div class="contact-grid">
+                <section class="contact-card">
+                    <h2>Send us a message</h2>
+                    <form id="contactForm" novalidate>
+                        <label for="contactName">Name</label>
+                        <input type="text" id="contactName" autocomplete="name" />
+
+                        <label for="contactEmail">Email</label>
+                        <input type="email" id="contactEmail" autocomplete="email" />
+
+                        <label for="contactMessage">Message</label>
+                        <textarea id="contactMessage"></textarea>
+
+                        <span class="field-error" id="contactError" role="alert"></span>
+                        <input type="submit" class="btn btn-primary" value="Send message" />
+                    </form>
+                    <p class="contact-thanks" id="contactThanks" hidden>Thanks, your message is on its way. We usually reply within two working days.</p>
+                </section>
+
+                <section class="contact-card faq" id="help">
+                    <h2>Help centre</h2>
+                    <details open>
+                        <summary>Are the courses really free?</summary>
+                        <p>Yes. Every course on BrushStroke is free to enrol in. You only need an account so we can save your progress.</p>
+                    </details>
+                    <details>
+                        <summary>How do I get a certificate?</summary>
+                        <p>Tick every task in every lesson, then press Finish course on the last lesson. Your certificate appears on your profile.</p>
+                    </details>
+                    <details>
+                        <summary>Where can I find my courses?</summary>
+                        <p>Log in and choose My Courses in the top menu. Each course picks up at your next lesson.</p>
+                    </details>
+                    <details>
+                        <summary>Can I stay logged in?</summary>
+                        <p>Tick Remember me on the log in page and BrushStroke will keep you signed in on that device.</p>
+                    </details>
+                    <details>
+                        <summary>I forgot my password</summary>
+                        <p>Password reset isn't available in this student version yet. Send us a message and we'll help.</p>
+                    </details>
+                </section>
+            </div>
+        </main>
+
+        <footer>
+            <div> BrushStroke </div>
+
+            <p class="blurb">Art courses for people who'd rather finish a piece than binge-watch tutorials.</p>
+
+            <a href="index.html">Home</a>
+            <a href="catalogue.html">Courses</a>
+            <a href="about.html">About us</a>
+
+            <h5>Support</h5>
+            <a href="contact.html#help">Help centre</a>
+            <a href="contact.html">Contact</a>
+
+            <div>
+                <span>© 2026 BrushStroke. Student site for IMY 320, University of Pretoria.</span>
+            </div>
+        </footer>
+        <script type="module" src="scripts/loginState.js"></script>
+        <script type="module" src="scripts/contact.js"></script>
+    </body>
+</html>

@@ -1,18 +1,20 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
-<head>
-    <title>BrushStroke</title>
-    <meta name="author" content="The Bees">
-    <meta charset="utf-8">
-    <link href="styles/theme.css" type="text/css" rel="stylesheet">
-    <link href="styles/nav.css" type="text/css" rel="stylesheet">
-    <link href="styles/login.css" type="text/css" rel="stylesheet">
-    <link href="styles/enrol.css" type="text/css" rel="stylesheet">
+    <head>
+        <title>BrushStroke — Log in</title>
+        <meta name="author" content="The Bees">
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="styles/theme.css" type="text/css" rel="stylesheet">
+        <link href="styles/nav.css" type="text/css" rel="stylesheet">
+        <link href="styles/login.css" type="text/css" rel="stylesheet">
+        <link href="styles/enrol.css" type="text/css" rel="stylesheet">
+        <link href="styles/auth.css" type="text/css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="/images/favicon.svg">
-</head>
+    </head>
 
-<body>
+<body class="auth-login">
     <header>
         <nav>
             <ul>
@@ -22,16 +24,35 @@
     </header>
 
     <main>
-        <div id="side">
-            <!--<img src="images/placeholderSide.png" />-->
+        <div id="side" class="auth-side">
+            <p class="auth-eyebrow">Welcome back</p>
+            <h2>Pick up where you left off.</h2>
+            <p>Your lessons, progress and certificates are right where you left them.</p>
         </div>
         <div id="login">
             <div id="box">
                 <h1>Log In</h1>
-                <label>Username <br/> <input type="text" id="loginusername"  /> <span id="loginusernameError"></span></label> <br/>
-                <label>Password <br/> <input type="password" id="loginpassword" /><span id="loginpasswordError"></span></label> <br/>
-                <input type="button" id="loginButton" value="Log In" />
-                <p> <a>Forgot Password?</a> </p>
+                <p class="auth-sub">Enter your details to continue.</p>
+
+                <div class="field">
+                    <label for="loginusername">Username</label>
+                    <input type="text" id="loginusername" autocomplete="username" />
+                    <span class="field-error" id="loginusernameError"></span>
+                </div>
+
+                <div class="field">
+                    <label for="loginpassword">Password</label>
+                    <div class="pw-field">
+                        <input type="password" id="loginpassword" autocomplete="current-password" />
+                        <button type="button" class="pw-toggle" data-target="loginpassword" aria-pressed="false">Show</button>
+                    </div>
+                    <span class="field-error" id="loginpasswordError"></span>
+                </div>
+
+                <label class="check"><input type="checkbox" id="loginremember" /> Remember me on this device</label>
+
+                <input type="button" id="loginButton" class="btn btn-primary btn-block" value="Log In" />
+                <p class="auth-form-error" id="loginFormError" role="alert"></p>
 
                 <p>Don't have an account? <a href="signup.html">Sign Up</a></p>
             </div>
