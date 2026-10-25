@@ -399,7 +399,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Gabriel colours storyboards for small animation teams and teaches colour as a handful of simple choices, not rules to memorise.",
-        bannerImg: ""
+        bannerImg: "class07.jpg"
     },
     {
         cat: "composition-visual-storytelling",
@@ -455,7 +455,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Hannah illustrates picture books and magazine covers, and believes every good image starts with one clear idea.",
-        bannerImg: ""
+        bannerImg: "class08.jpg"
     },
     {
         cat: "creature-design-from-nature",
@@ -511,7 +511,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Isaac designs creatures for indie games and fills his sketchbooks on weekend trips to the zoo.",
-        bannerImg: ""
+        bannerImg: "class09.jpg"
     },
     {
         cat: "hands-and-feet-made-simple",
@@ -567,7 +567,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Jade has taught life drawing classes for over ten years and insists that hands are easier than they look.",
-        bannerImg: ""
+        bannerImg: "class10.jpg"
     },
     {
         cat: "comic-page-layout",
@@ -623,7 +623,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Kai self-publishes a weekly webcomic and has lettered pages for several small presses.",
-        bannerImg: ""
+        bannerImg: "class11.jpg"
     },
     {
         cat: "procreate-essentials",
@@ -679,7 +679,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Lena draws on her iPad during her daily train commute and has introduced hundreds of beginners to Procreate.",
-        bannerImg: ""
+        bannerImg: "class12.jpg"
     },
     {
         cat: "rendering-materials",
@@ -735,7 +735,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Mateo paints props and still lifes for animation studios and is endlessly curious about how things catch light.",
-        bannerImg: ""
+        bannerImg: "class13.jpg"
     },
     {
         cat: "whimsical-illustration-storytelling",
@@ -791,7 +791,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Grace creates whimsical illustrations for children's books, stationery, and independent publishing projects.",
-        bannerImg: ""
+        bannerImg: "class14.jpg"
     },
     {
         cat: "creature-design-concept-art",
@@ -847,7 +847,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Henry specialises in fantasy creature concepts and has worked on independent games and tabletop projects.",
-        bannerImg: ""
+        bannerImg: "class15.jpg"
     },
     {
         cat: "pixel-art-for-games",
@@ -903,7 +903,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Ivy creates pixel art for indie games and enjoys teaching artists how to communicate ideas with limited pixels.",
-        bannerImg: ""
+        bannerImg: "class16.jpg"
     },
     {
         cat: "digital-watercolour-botanical",
@@ -959,7 +959,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Maya is an illustrator who creates botanical artwork for prints, journals, and nature-inspired stationery.",
-        bannerImg: ""
+        bannerImg: "class17.jpg"
     },
     {
         cat: "comic-art-visual-storytelling",
@@ -1015,7 +1015,7 @@ export const COURSES = [
             }
         ],
         instructorBio: "Richard draws and writes short comics and teaches how to make a page easy and enjoyable to follow.",
-        bannerImg: ""
+        bannerImg: "class18.jpg"
     },
     {
         cat: "logo-design-visual-identity",
@@ -1071,6 +1071,6 @@ export const COURSES = [
             }
         ],
         instructorBio: "Sophie designs logos and brand identities for small creative businesses and loves a simple mark that works at any size.",
-        bannerImg: ""
+        bannerImg: "class19.jpg"
     }
 ];
