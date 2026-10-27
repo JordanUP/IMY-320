@@ -7,12 +7,13 @@
 
 import { COURSES } from "./data.js";
 import {
-    isLoggedIn, hasPurchased, isTaskDone, setTaskDone, issueCertificate, hasCertificate
+    isLoggedIn, hasPurchased, isTaskDone, setTaskDone, issueCertificate, hasCertificate, hasSeenHalfway, markHalfwaySeen
 } from "./storage.js";
 import {
     getLessons, getCourseProgress, isLessonComplete, lessonDoneCount, lessonUrl
 } from "./lessons.js";
 import { openDialog, paragraph } from "./dialog.js";
+import { showToast } from "./toast.js";
 
 const gateEl = document.getElementById("lessonGate");
 const shellEl = document.getElementById("lessonShell");
@@ -33,9 +34,7 @@ function showGate(title, message, linkLabel, linkHref) {
     shellEl.hidden = true;
 }
 
-/* ---------------------------------------------------------------------------
- * Gate: only enrolled, logged-in learners see lessons
- * ------------------------------------------------------------------------ */
+//  Gate: only enrolled, logged-in learners see lessons
 
 if (!course) {
     showGate("Lesson not found", "That link doesn't match a course we offer.", "Back to catalogue", "catalogue.html");
@@ -54,6 +53,11 @@ function start() {
         : 0;
     const lesson = lessons[index];
     const isLast = index === lessons.length - 1;
+
+    // If an existing learner is already past halfway remember it quietly so they don't get a surprise "halfway" toast at 80% later.
+    if (!hasSeenHalfway(course.cat) && getCourseProgress(course).percent >= 50) {
+        markHalfwaySeen(course.cat);
+    }
 
     document.title = `BrushStroke — ${lesson.title}`;
     gateEl.hidden = true;
@@ -129,6 +133,7 @@ function renderLesson(lesson, total) {
             const lessons = getLessons(course);
             refreshProgress(lessons, lesson.index);
             renderFooter(lessons, lesson.index, lesson.index === lessons.length - 1);
+            maybeCelebrateHalfway(box.checked);
         });
     });
 }
@@ -158,8 +163,7 @@ function renderFooter(lessons, index, isLast) {
     }
 }
 
-/* The small "lesson complete" tick is deliberate: a modest reward for each lesson,
- * saving the big celebration for finishing the whole course. */
+// The small "lesson complete" tick is deliberate, saving the big celebration for finishing the whole course.
 function refreshProgress(lessons, activeIndex) {
     const progress = getCourseProgress(course);
 
@@ -187,6 +191,21 @@ function refreshProgress(lessons, activeIndex) {
         status.textContent = `${doneHere} of ${active.tasks.length} tasks done`;
         status.classList.remove("is-done");
     }
+}
+
+// Fires once per course, the first time a tick pushes progress to 50% or more.
+function maybeCelebrateHalfway(justTicked) {
+    if (!justTicked) return;
+
+    const progress = getCourseProgress(course);
+    if (progress.percent < 50) return;
+
+    if (!markHalfwaySeen(course.cat)) return;
+
+    showToast({
+        title: "Halfway there",
+        message: `You're 50% through ${course.title}. Keep going — your finished piece is closer than you think.`
+    });
 }
 
 /* ---------------------------------------------------------------------------

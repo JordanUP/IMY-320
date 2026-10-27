@@ -141,7 +141,8 @@ function getData() {
     return {
         courses: Array.isArray(data.courses) ? data.courses : [],
         progress: data.progress && typeof data.progress === "object" ? data.progress : {},
-        certificates: Array.isArray(data.certificates) ? data.certificates : []
+        certificates: Array.isArray(data.certificates) ? data.certificates : [],
+        halfway: Array.isArray(data.halfway) ? data.halfway : []
     };
 }
 
@@ -172,6 +173,7 @@ export function clearPurchases() {
     const data = getData();
     data.courses = [];
     data.progress = {};
+    data.halfway = [];
     saveData(data);
 }
 
@@ -213,6 +215,22 @@ export function issueCertificate(courseId) {
         course: courseId,
         date: new Date().toISOString()
     });
+    saveData(data);
+    return true;
+}
+
+// Halfway celebration
+
+export function hasSeenHalfway(courseId) {
+    return getData().halfway.includes(courseId);
+}
+
+//Returns true only the first time, so the caller knows whether to celebrate.
+export function markHalfwaySeen(courseId) {
+    const data = getData();
+    if (data.halfway.includes(courseId)) return false;
+
+    data.halfway.push(courseId);
     saveData(data);
     return true;
 }
